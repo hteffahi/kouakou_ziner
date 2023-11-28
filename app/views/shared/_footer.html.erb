@@ -1,0 +1,20 @@
+<div class="navbar navbar-expand-sm footer-box justify-content-center">
+  <div class='d-flex w-100 justify-content-evenly' id="icone">
+    <div id='add-ingredient'>
+      <%= link_to new_ingredient_path, class: "navbar-brand" do %>
+        <%= image_tag 'basket.png', alt: 'Ajouter un ingredient au frigo' %>
+      <% end %>
+    </div>
+    <div id='fridge'>
+      <%= link_to ingredients_path, class: "navbar-brand" do %>
+        <%= image_tag 'fridge.png', alt: 'Ajouter un ingredient au frigo' %>
+      <% end %>
+    </div>
+    <div id='profil'>
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag 'user.png', alt: 'Ajouter un ingredient au frigo' %>
+      <% end %>
+    </div>
+  </div>
+</div>
+  
