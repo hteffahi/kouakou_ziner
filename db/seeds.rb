@@ -33,7 +33,6 @@ User.create(
   last_name: 'Lennon',
   email: 'john@lennon.com',
   password: '123456'
-  # encrypted_password: '123456'
 )
 puts "1 user created !"
 
@@ -85,9 +84,6 @@ puts 'Creating 50 random ingredients ...'
   ingredient.save!
 end
 puts 'Finished, the fridge is full of ingredients !'
-
-
-
 
 puts 'Creating 10 recipes..'
 10.times do
