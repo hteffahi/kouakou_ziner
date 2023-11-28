@@ -10,7 +10,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
+  <body>
+    <% unless current_page?(controller: 'pages', action: 'home') %>
+    <%= render "shared/navbar" %>
+      <% end %>
       <%= render "shared/flashes" %>
 
     <%= yield %>
