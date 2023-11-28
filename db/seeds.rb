@@ -65,8 +65,8 @@ puts 'Creating 50 random ingredients ...'
     amount: Faker::Number.digit,
     unit: Faker::Food.metric_measurement,
     expiration: Faker::Date.forward(days: 23),
-    user_id: 1,
-    category_id: rand(1..6)
+    user: User.first,
+    category_id: Category.all.sample.id
   )
   ingredient.save!
 end
