@@ -1,6 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: #A6CF98;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -8,5 +8,22 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 40px;
+  width: 64px;
+  margin: 0px;
+}
+.container-fluid {
+  padding-right: 0%;
+}
+
+#text-logo {
+  color: #FFF;
+  -webkit-text-stroke: 2px #557C55;
+  text-align: center;
+  font-family: Kavoon;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 2.55px;
+  margin-bottom: 0px;
 }

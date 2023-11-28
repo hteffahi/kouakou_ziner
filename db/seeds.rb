@@ -8,14 +8,17 @@
 require 'faker'
 
 puts "Destroy all the Database to recreate it"
-User.destroy_all
-Category.destroy_all
+puts "Destroy indregient"
 Ingredient.destroy_all
+puts "Destroy category"
+Category.destroy_all
+puts "Destroy user"
+User.destroy_all
 puts "DB clean"
 
 
 puts 'Creating users'
-user = User.create(
+User.create(
   first_name: 'John',
   last_name: 'Lennon',
   email: 'john@lennon.com',
@@ -66,8 +69,10 @@ puts 'Creating 50 random ingredients ...'
     unit: Faker::Food.metric_measurement,
     expiration: Faker::Date.forward(days: 23),
     user: User.first,
-    category_id: Category.all.sample.id
+    category_id: Category.all.sample.id 
   )
+  ingredient.category_id = Category.all.sample.id
+  ingredient.user = User.all.sample
   ingredient.save!
 end
 puts 'Finished, the fridge is full of ingredients'
