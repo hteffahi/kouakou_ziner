@@ -7,15 +7,22 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
-# puts 'Creating users'
-# user = User.new(
-#   first_name: 'John',
-#   last_name: 'Lennon',
-#   email: 'john@lennon.com',
-#   password: '123456',
-#   encrypted_password:
-# )
-# puts "1 user created"
+puts "Destroy all the Database to recreate it"
+User.destroy_all
+Category.destroy_all
+Ingredient.destroy_all
+puts "DB clean"
+
+
+puts 'Creating users'
+user = User.create(
+  first_name: 'John',
+  last_name: 'Lennon',
+  email: 'john@lennon.com',
+  password: '123456'
+  # encrypted_password: '123456'
+)
+puts "1 user created"
 
 
 puts 'Creating categories ...'
