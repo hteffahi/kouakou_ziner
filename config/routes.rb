@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :ingredients
   resources :recipes, only: %i[index show create]
+  get "/dashboard", to: "dashboard#profile"
 end
