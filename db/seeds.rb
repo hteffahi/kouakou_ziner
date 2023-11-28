@@ -18,7 +18,7 @@ puts "DB clean"
 
 
 puts 'Creating users'
-user = User.create(
+User.create(
   first_name: 'John',
   last_name: 'Lennon',
   email: 'john@lennon.com',
