@@ -7,10 +7,23 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require 'faker'
 
+step = "Etape 1 :
+Eodem tempore etiam Hymetii praeclarae indolis viri negotium est actitatum, cuius hunc novimus esse textum. cum Africam pro consule regeret Carthaginiensibus victus inopia iam lassatis, ex horreis Romano populo destinatis frumentum dedit, pauloque postea cum provenisset segetum copia, integre sine ulla restituit mora.
+Etape 2:
+Coactique aliquotiens nostri pedites ad eos persequendos scandere clivos sublimes etiam si lapsantibus plantis fruticeta prensando vel dumos ad vertices venerint summos, inter arta tamen et invia nullas acies explicare permissi nec firmare nisu valido gressus: hoste discursatore rupium abscisa volvente, ruinis ponderum inmanium consternuntur, aut ex necessitate ultima fortiter dimicante, superati periculose per prona discedunt.
+Etape 3:
+Et quoniam apud eos ut in capite mundi morborum acerbitates celsius dominantur, ad quos vel sedandos omnis professio medendi torpescit, excogitatum est adminiculum sospitale nequi amicum perferentem similia videat, additumque est cautionibus paucis remedium aliud satis validum, ut famulos percontatum missos quem ad modum valeant noti hac aegritudine colligati, non ante recipiant domum quam lavacro purgaverint corpus. ita etiam alienis oculis visa metuitur labes.
+"
+
 puts "Destroy all the Database to recreate it"
+puts "Destroy indregients"
 Ingredient.destroy_all
-User.destroy_all
+puts "Destroy recipes"
+Recipe.destroy_all
+puts "Destroy categories"
 Category.destroy_all
+puts "Destroy user"
+User.destroy_all
 puts "DB clean"
 
 
@@ -20,9 +33,8 @@ User.create(
   last_name: 'Lennon',
   email: 'john@lennon.com',
   password: '123456'
-  # encrypted_password: '123456'
 )
-puts "1 user created"
+puts "1 user created !"
 
 
 puts 'Creating categories ...'
@@ -64,10 +76,24 @@ puts 'Creating 50 random ingredients ...'
     name: Faker::Food.ingredient,
     amount: Faker::Number.digit,
     unit: Faker::Food.metric_measurement,
-    expiration: Faker::Date.forward(days: 23),
-    user_id: user.id,
-    category_id: Category.all.sample.id 
+    expiration: Faker::Date.forward(days: 23)
+    # category_id: rand(1..6)
   )
+  ingredient.category_id = Category.all.sample.id
+  ingredient.user = User.all.sample
   ingredient.save!
 end
-puts 'Finished, the fridge is full of ingredients'
+puts 'Finished, the fridge is full of ingredients !'
+
+puts 'Creating 10 recipes..'
+10.times do
+  recipe = Recipe.new(
+    name: Faker::Food.dish,
+    duration: "#{Faker::Number.between(from: 1, to: 180)} min",
+    step: step,
+    difficulty: Faker::Number.between(from: 1, to: 10)
+  )
+  recipe.user = User.all.sample
+  recipe.save!
+end
+puts '10 recipes created !'
