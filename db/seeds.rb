@@ -15,7 +15,7 @@ puts "DB clean"
 
 
 puts 'Creating users'
-user = User.create(
+User.create(
   first_name: 'John',
   last_name: 'Lennon',
   email: 'john@lennon.com',
@@ -65,8 +65,8 @@ puts 'Creating 50 random ingredients ...'
     amount: Faker::Number.digit,
     unit: Faker::Food.metric_measurement,
     expiration: Faker::Date.forward(days: 23),
-    user_id: user.id,  # Utiliser l'id de l'utilisateur créé
-    category_id: Category.all.sample.id
+    user_id: user.id,
+    category_id: Category.all.sample.id 
   )
   ingredient.save!
 end
