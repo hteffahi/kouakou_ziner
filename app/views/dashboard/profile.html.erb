@@ -1,9 +1,27 @@
-<h1>Vos recettes favorites</h1>
-<ul>
-  <% @recipes.each do |recipe| %>
-    <li><%= recipe.name %></li>
-  <% end %>
-</ul>
-<%= link_to 'Ajouter un Ingrédient', new_ingredient_path(current_user) %>
-<%= link_to 'frigo', index_path(current_user) %>
-<%= link_to 'Mes Recettes Faciles', my_easy_recipes_user_path(current_user) %>
+
+
+<div class="container">
+  <div class="action-cards">
+   <%= link_to new_ingredient_path(current_user) do %>
+      <div class="ingredient-card">
+        <i class="fa-solid fa-plus"></i>
+        <h3>favorites recipes</h3>
+      </div>
+    <%end%>
+    <%= link_to new_ingredient_path(current_user) do %>
+      <div class="ingredient-card">
+        <i class="fa-solid fa-plus"></i>
+        <h3>Add New Ingredients</h3>
+      </div>
+    <%end%>
+<%= link_to ingredient_path(current_user) do %>
+      <div class="ingredient-card link">
+        <i class="fa-solid fa-chart-bar"></i>
+        <h3>Frigo</h3>
+      </div>
+    <%end%>
+
+
+ <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete} %>
+  </div>
+</div>
