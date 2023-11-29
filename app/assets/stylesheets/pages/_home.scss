@@ -33,3 +33,8 @@
   border-radius: 5px;
   font-size: 1.2em;
 }
+body{
+  & > .add-margin:not(.hidden-nav){
+    margin-bottom: 100px;
+  }
+}
