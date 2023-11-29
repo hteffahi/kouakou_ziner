@@ -14,11 +14,7 @@
   </head>
 
   <body>
-    <% unless current_page?(controller: 'pages', action: 'home')%>
-      <%= render "shared/navbar" %>
-      <%= render "shared/flashes" %>
-      <% end%>
-
+    
     <%= yield %>
 
   </body>

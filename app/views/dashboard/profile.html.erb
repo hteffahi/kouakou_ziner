@@ -4,3 +4,6 @@
     <li><%= recipe.name %></li>
   <% end %>
 </ul>
+<%= link_to 'Ajouter un Ingrédient', new_ingredient_path(current_user) %>
+<%= link_to 'frigo', index_path(current_user) %>
+<%= link_to 'Mes Recettes Faciles', my_easy_recipes_user_path(current_user) %>
