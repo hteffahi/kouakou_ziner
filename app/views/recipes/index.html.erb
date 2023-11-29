@@ -1,0 +1,6 @@
+
+<%= form_with url: recipes_search_path, method: :get do |form| %>
+  <%= form.label :query, "Search for Recipes:" %>
+  <%= form.text_field :query %>
+  <%= form.submit "Search" %>
+<% end %>
