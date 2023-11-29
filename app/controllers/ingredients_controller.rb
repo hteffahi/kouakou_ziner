@@ -3,10 +3,11 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   def index
-    if params[:query].present?
-      @ingredients = Ingredient.search_by_name(params[:query])
-    else
-      @ingredients = Ingredient.all
+    @ingredients = Ingredient.order(expiration: :asc)
+    @ingredients = Ingredient.search_by_name(params[:query]) if params[:query].present?
+    respond_to do |format|
+      format.html
+      format.text { render partial: 'list', locals: { ingredients: @ingredients }, formats: [:html] }
     end
   end
 
