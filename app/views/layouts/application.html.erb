@@ -14,9 +14,13 @@
   </head>
 
   <body>
-    
-    <%= yield %>
-
-  </body>
+    <% unless current_page?(root_path) %>
+      <%= render "shared/navbar" %>
+      <%= render "shared/flashes" %>
+      <%= yield %>
       <%= render 'shared/footer' %>
+    <% else %>
+      <%= yield %>
+    <% end %>
+  </body>
 </html>
