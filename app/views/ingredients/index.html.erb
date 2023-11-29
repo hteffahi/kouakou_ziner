@@ -12,9 +12,9 @@
             Quantité: <%= ingredient.amount %> <%= ingredient.unit %><br>
           </p>
           <div class="mt-auto">
-            <%= link_to 'Afficher', ingredient, class: "btn btn-outline-secondary btn-sm" %>
-            <%= link_to 'Modifier', edit_ingredient_path(ingredient), class: "btn btn-outline-secondary btn-sm" %>
-            <%= link_to "Supprimer", ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %>
+            <%= link_to 'Show', ingredient, class: "btn btn-outline-secondary btn-sm" %>
+            <%= link_to 'edit', edit_ingredient_path(ingredient), class: "btn btn-outline-secondary btn-sm" %>
+            <%= link_to "Delete",ingredient_path(ingredient),data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger btn-sm"%>
           </div>
         </div>
       </div>
