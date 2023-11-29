@@ -3,7 +3,11 @@ class IngredientsController < ApplicationController
   before_action :set_ingredient, only: [:show, :edit, :update, :destroy]
 
   def index
-    @ingredients = Ingredient.all
+    if params[:query].present?
+      @ingredients = Ingredient.search_by_name(params[:query])
+    else
+      @ingredients = Ingredient.all
+    end
   end
 
   def show
