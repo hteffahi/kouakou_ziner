@@ -1,6 +1,13 @@
 
-
 <div class="container">
+<div class="search-bar">
+<%= form_with url: recipes_search_path, method: :get do |form| %>
+  <%= form.text_field :query, placeholder: "Search for Recipes", class:"search-field" %>
+  <%= form.submit "Search",class:"submit-field"  %>
+<% end %>
+</div>
+
+
   <div class="action-cards">
    <%= link_to new_ingredient_path(current_user) do %>
       <div class="ingredient-card">
@@ -14,14 +21,17 @@
         <h3>Add New Ingredients</h3>
       </div>
     <%end%>
-<%= link_to ingredient_path(current_user) do %>
+<%= link_to ingredients_path do %>
       <div class="ingredient-card link">
         <i class="fa-solid fa-chart-bar"></i>
         <h3>Frigo</h3>
       </div>
     <%end%>
 
+ <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+ <%= image_tag "logout", alt:"logout" %>
+  <h3 class="log_out">log out</h3>
+ <% end %>
 
- <%= link_to 'Log out', destroy_user_session_path, data: {turbo_method: :delete} %>
   </div>
 </div>
