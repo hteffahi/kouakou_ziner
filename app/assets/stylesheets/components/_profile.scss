@@ -1,0 +1,46 @@
+.link{
+  color: red;
+  text-decoration: none;
+
+}
+.card{
+  display: inline-block;
+  justify-content: center;
+}
+
+.action-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-direction: column;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  .recipes-card {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    padding: 10px;
+  }
+  .ingredient-card {
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    cursor: pointer;
+    padding: 10px;
+    min-width: 50vw;
+
+  }
+  h3 {
+    font-size: 18px;
+  }
+  i {
+    font-size: 18px;
+  }
+  link{
+    display: flex;
+  }
+}
