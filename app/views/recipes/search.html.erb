@@ -7,6 +7,7 @@
       <div class="recipe">
         <h2><%= recipe["title"] %></h2>
         <%= image_tag recipe["image"], alt: recipe["title"] %>
+        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
 
       </div>
     <% end %>

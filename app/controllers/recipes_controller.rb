@@ -9,4 +9,8 @@ class RecipesController < ApplicationController
       @results = []
     end
   end
+  def show
+    recipe_id = params[:id]
+    @recipe_details = SpoonacularService.new.get_recipe_information(recipe_id)
+  end
 end

@@ -1,1 +1,24 @@
 <h1>coucou</h1>
+<% if @recipe_details %>
+  <h1><%= @recipe_details["title"] %></h1>
+
+  <% if @recipe_details["image"] %>
+    <img src="<%= @recipe_details["image"] %>" alt="<%= @recipe_details["title"] %>">
+  <% end %>
+
+  <p><%= @recipe_details["summary"].html_safe %></p>
+
+  <h2>Ingrédients</h2>
+  <ul>
+    <% @recipe_details["extendedIngredients"].each do |ingredient| %>
+      <li><%= ingredient["original"] %></li>
+    <% end %>
+  </ul>
+
+  <h2>Instructions</h2>
+  <p><%= @recipe_details["instructions"].html_safe %></p>
+
+  <!-- Autres détails que vous souhaitez afficher -->
+<% else %>
+  <p>La recette n'a pas pu être trouvée.</p>
+<% end %>

@@ -12,4 +12,9 @@ class SpoonacularService
     options = { query: { apiKey: @api_key, query: query } }
     self.class.get("/recipes/complexSearch", options)
   end
+  
+  def get_recipe_information(id)
+    options = { query: { apiKey: @api_key } }
+    self.class.get("/recipes/#{id}/information", options)
+  end
 end
