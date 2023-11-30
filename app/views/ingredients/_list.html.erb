@@ -1,17 +1,25 @@
 <div data-search-ingredients-target='list' class='row'>
   <% if !@ingredients.empty? %>
     <% @ingredients.each do |ingredient| %>
-      <div class="col-md-4 mb-4">
-        <div class="card h-100 shadow-sm" style="background-color: #f8f9fa;">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
+        <div id='ingredient-card' class="card h-100 shadow-sm" style="background-color: #f8f9fa;">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title" style="color: black;"><%= ingredient.name %></h5>
             <p class="card-text" style="color: black;">
-              Quantité: <%= ingredient.amount %> <%= ingredient.unit %><br>
+              Amount: <%= ingredient.amount %> <%= ingredient.unit %><br>
+              Expiration : <%= ingredient.expiration %>
             </p>
-            <div class="mt-auto">
-              <%= link_to 'Afficher', ingredient, class: "btn btn-outline-secondary btn-sm" %>
-              <%= link_to 'Modifier', edit_ingredient_path(ingredient), class: "btn btn-outline-secondary btn-sm" %>
-              <%= link_to "Supprimer", ingredient_path(ingredient), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger btn-sm" %>
+            <div class="mt-auto d-flex justify-content-evenly">
+              <div class="edit">
+                <%= link_to edit_ingredient_path(ingredient) do %>
+                  <%= image_tag 'editing', alt: 'Editing ingredient' %>
+                <% end %>
+              </div>
+              <div id='delete'>
+                <%= link_to ingredient_path(ingredient), class: "navbar-brand", data: {turbo_method: :delete, turbo_confirm: "Delete ingredient from fridge"} do %>
+                  <%= image_tag 'bin', alt: 'Delete ingredient from fridge' %>
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
