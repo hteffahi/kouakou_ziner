@@ -50,24 +50,30 @@ body{
   width: 100%;
   height: 250px;
   overflow: hidden;
-
+  margin-top: 100px;
   img {
     width: 100%;
     height: 250px;
   }
 }
+.responsive {
+  margin-top: -50px;
+}
+
 @media (min-width: 768px) and (max-height: 450px) {
   .logo img {
-    width: 80px; /* Ajustez la taille du logo selon vos besoins */
-    height: auto; /* Permettez à la hauteur de s'ajuster automatiquement pour conserver les proportions du logo */
+    width: 80px;
+    height: auto;
   }
   .responsive {
     display: flex;
+    margin-top: -45px;
     .description {
       align-self: center;
     }
   }
   .carousel {
+    margin-top: 0px;
     width: auto;
     img {
       width: auto;
