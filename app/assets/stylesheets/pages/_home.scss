@@ -10,7 +10,9 @@
   align-items: center;
   justify-content: center;
   color: #ffffff; /* Set text color to contrast with the background */
-}
+
+  }
+
 
 .logo {
   font-size: 2em;
@@ -35,6 +37,9 @@
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.2em;
+}
+.btn-primary{
+  border-radius: 15px;
 }
 body{
   & > .add-margin:not(.hidden-nav){
