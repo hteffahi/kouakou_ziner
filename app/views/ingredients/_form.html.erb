@@ -14,7 +14,7 @@
           <%= f.input :user_id, input_html: { class: 'form-control' } %>
           <%= f.input :category_id, collection: Category.all, label_method: :name, include_blank: true, input_html: { class: 'form-control' } %>
         </div>
-
+        <%= link_to 'Retour à la liste des ingrédients', ingredients_path, class: 'btn btn-secondary mt-3' %>
         <div class="form-actions">
           <%= f.button :submit, class: 'btn btn-secondary mt-3' %>
         </div>
@@ -22,4 +22,3 @@
     </div>
   </div>
 </div>
-
