@@ -15,6 +15,9 @@
 .logo {
   font-size: 2em;
   margin-bottom: 10px;
+  img {
+    width: 225px;
+  }
 }
 .description {
   font-size: 1.2em;
@@ -36,5 +39,33 @@
 body{
   & > .add-margin:not(.hidden-nav){
     margin-bottom: 100px;
+  }
+}
+.carousel {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 250px;
+  }
+}
+@media (min-width: 768px) and (max-height: 450px) {
+  .logo img {
+    width: 80px; /* Ajustez la taille du logo selon vos besoins */
+    height: auto; /* Permettez à la hauteur de s'ajuster automatiquement pour conserver les proportions du logo */
+  }
+  .responsive {
+    display: flex;
+    .description {
+      align-self: center;
+    }
+  }
+  .carousel {
+    width: auto;
+    img {
+      width: auto;
+    }
   }
 }
