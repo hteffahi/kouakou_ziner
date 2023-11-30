@@ -3,9 +3,10 @@
   text-decoration: none;
 
 }
-.card{
-  display: inline-block;
-  justify-content: center;
+.search-bar{
+  margin: 40px;
+  border-radius: 15px;
+  margin-bottom: 20px;
 }
 
 .action-cards {
@@ -15,6 +16,9 @@
   gap: 15px;
   flex-direction: column;
   margin: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   a {
     text-decoration: none;
     color: black;
@@ -33,6 +37,10 @@
     cursor: pointer;
     padding: 10px;
     min-width: 50vw;
+    flex: 1 1 300px; /* Adjust as needed */
+    padding: 20px;
+    background-color: #f4f4f4;
+    text-align: center;
 
   }
   h3 {
@@ -44,4 +52,26 @@
   link{
     display: flex;
   }
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media screen and (max-width: 768px) {
+  .ingredient-card {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+}
+.search-field{
+  opacity: 0.6;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 7px;
+}
+.submit-field{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 7px;
+}
+.log_out{
+  margin-left: -10px;
 }
