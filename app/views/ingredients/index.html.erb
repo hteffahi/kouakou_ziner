@@ -13,9 +13,11 @@
           placeholder: "Type a keyword",
           data: { action: 'keyup->search-ingredients#update', search_ingredients_target: 'input' }
         %>
+
         <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
       <% end %>
       <%= render 'list', ingredients: @ingredients %>
+
     </div>
   </div>
 </div>
