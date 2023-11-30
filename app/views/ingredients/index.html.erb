@@ -1,20 +1,19 @@
 <!-- app/views/ingredients/index.html.erb -->
-<div class="add-margin">
+<div class="add-margin m-2">
 
   <h1>Liste des Ingrédients</h1>
-  <%= link_to 'Nouvel Ingrédient', new_ingredient_path, class: "btn btn-primary" %>
+  <%= link_to 'Add ingredient', new_ingredient_path, class: "btn btn-green" %>
 
   <div class="row justify-content-center">
-    <div data-controller='search-ingredients' class="col-sm-8 my-3">
-      <%= form_with url: ingredients_path, method: :get, class: "d-flex", data: { search_ingredients_target: 'form' } do %>
+    <div data-controller='search-ingredients' class="my-3">
+      <%= form_with url: ingredients_path, method: :get, class: "d-flex mb-3", data: { search_ingredients_target: 'form' } do %>
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Type a keyword",
           data: { action: 'keyup->search-ingredients#update', search_ingredients_target: 'input' }
         %>
-
-        <%= submit_tag "Search", name: "", class: "btn btn-primary" %>
+        <%= submit_tag "Search", name: "", class: "btn btn-green" %>
       <% end %>
       <%= render 'list', ingredients: @ingredients %>
 
