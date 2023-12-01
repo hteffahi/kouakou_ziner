@@ -54,6 +54,7 @@
   }
 }
 .container {
+
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -74,4 +75,16 @@
 }
 .log_out{
   margin-left: -10px;
+  text-decoration: underline;
+}
+.profil_image{
+  img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+  }
+
 }
