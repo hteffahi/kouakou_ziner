@@ -1,7 +1,7 @@
 <!-- app/views/ingredients/_form.html.erb or another appropriate view file -->
 
-<div class="d-flex justify-content-center" style="height: 100vh;">
-  <div class="card">
+<div class="d-flex justify-content-center mt-3">
+  <div class="card" id='no-border'>
     <div class="card-body">
       <%= simple_form_for @ingredient do |f| %>
         <%= f.error_notification %>
@@ -13,9 +13,8 @@
           <%= f.input :unit, input_html: { class: 'form-control' } %>
           <%= f.input :category_id, collection: Category.all, label_method: :name, include_blank: true, input_html: { class: 'form-control' } %>
         </div>
-        <%= link_to 'Retour à la liste des ingrédients', ingredients_path, class: 'btn btn-secondary mt-3' %>
         <div class="form-actions">
-          <%= f.button :submit, class: 'btn btn-secondary mt-3' %>
+          <%= f.button :submit, class: 'btn btn-green' %>
         </div>
       <% end %>
     </div>
