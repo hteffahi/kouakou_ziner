@@ -8,9 +8,9 @@
 
         <div class="form-inputs">
           <%= f.input :name, input_html: { class: 'form-control' } %>
-          <%= f.input :expiration, as: :date, input_html: { class: 'form-control' } %>
+          <%= f.input :expiration, as: :string, input_html: { data: { controller: "flatpickr" } } %>
           <%= f.input :amount, input_html: { class: 'form-control' } %>
-          <%= f.input :unit, input_html: { class: 'form-control' } %>
+          <%= f.input :unit, collection: Ingredient.valid_units, input_html: { class: 'form-control' } %>
           <%= f.input :category_id, collection: Category.all, label_method: :name, include_blank: true, input_html: { class: 'form-control' } %>
         </div>
         <div class="form-actions">
