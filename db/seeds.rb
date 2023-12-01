@@ -75,7 +75,7 @@ puts 'Creating 50 random ingredients ...'
   ingredient = Ingredient.new(
     name: Faker::Food.ingredient,
     amount: Faker::Number.non_zero_digit,
-    unit: Faker::Food.metric_measurement,
+    unit: Ingredient.valid_units.sample,
     expiration: Faker::Date.forward(days: 23)
     # category_id: rand(1..6)
   )
