@@ -19,7 +19,7 @@ class IngredientsController < ApplicationController
 
   def update
     @ingredient.update(ingredient_params)
-    redirect_to ingredient_path(@ingredient)
+    redirect_to ingredients_path
   end
 
   def new
@@ -28,9 +28,10 @@ class IngredientsController < ApplicationController
 
   def create
     @ingredient = Ingredient.new(ingredient_params)
+    @ingredient.user = current_user
 
     if @ingredient.save
-      redirect_to @ingredient
+      redirect_to ingredients_path, notice: 'Ingredient created'
     else
       render :new
     end
