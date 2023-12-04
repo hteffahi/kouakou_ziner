@@ -8,7 +8,7 @@
 <div class="search-bar">
 <%= form_with url: recipes_search_path, method: :get do |form| %>
   <%= form.text_field :query, placeholder: "Search for Recipes",class:"search-field" %>
-  <%= form.submit "Search",class:"submit-field"  %>
+  <%= form.submit "Cook !", class: "submit-field btn btn-green" %>
 <% end %>
 </div>
 
@@ -29,7 +29,7 @@
 <%= link_to ingredients_path do %>
       <div class="ingredient-card link">
         <i class="fa-solid fa-chart-bar"></i>
-        <h3>Frigo</h3>
+        <h3>Fridge</h3>
       </div>
     <%end%>
 

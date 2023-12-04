@@ -1,7 +1,7 @@
 class Ingredient < ApplicationRecord
   belongs_to :user
 
-  VALID_UNITS = %w(tsp tbsp cup oz lb t pc)
+  VALID_UNITS = %w(tsp tbsp cup oz lb t piece)
   validates :name, presence: true
   validates :amount, presence: true, numericality: { greater_than: 0 }
   validates :unit, inclusion: { in: VALID_UNITS }

@@ -9,6 +9,7 @@ class RecipesController < ApplicationController
       @results = []
     end
   end
+
   def show
     recipe_id = params[:id]
     @recipe_details = SpoonacularService.new.get_recipe_information(recipe_id)
@@ -19,5 +20,12 @@ class RecipesController < ApplicationController
     @recipe_details = SpoonacularService.new.get_by_ingredients(my_query)
     @recipes = @recipe_details.parsed_response
   end
+
+  private
+
+  def recipe_params
+    params.require(:recipe).permit(:name, :image, :summary)
+  end
+
 end
  
