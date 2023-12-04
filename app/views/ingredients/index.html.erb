@@ -1,8 +1,7 @@
 <!-- app/views/ingredients/index.html.erb -->
 <div class="add-margin m-2">
 
-  <h1>Ingredients</h1>
-  <%= link_to 'Add ingredient', new_ingredient_path, class: "btn btn-green" %>
+  <h1 style='font-family: Pacifico;'>Frigoooo</h1>
 
   <div class="row justify-content-center">
     <div data-controller='search-ingredients' class="my-3">
@@ -10,7 +9,7 @@
         <%= text_field_tag :query,
           params[:query],
           class: "form-control",
-          placeholder: "Type a keyword",
+          placeholder: "Search an ingredient",
           data: { action: 'keyup->search-ingredients#update', search_ingredients_target: 'input' }
         %>
         <%= submit_tag "Search", name: "", class: "btn btn-green" %>
