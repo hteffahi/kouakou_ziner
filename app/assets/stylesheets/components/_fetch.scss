@@ -1,0 +1,20 @@
+h1{
+  display: flex;
+  justify-content: center;
+}
+.recipes{
+  text-align: center;
+  img{
+    margin: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border-radius: 10px;
+
+  }
+  h2 {
+    margin-bottom: 15px;
+  }
+  a {
+    text-decoration: none;
+    color: #A6CF98;
+  }
+}
