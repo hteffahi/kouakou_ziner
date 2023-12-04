@@ -1,18 +1,17 @@
-<h1>Je suis le plus fort</h1>
 
+<div class="container">
 <h1>Recipe Results</h1>
 
 <% if @recipes.present? %>
   <div class="recipes">
     <% @recipes.each do |recipe| %>
       <div class="recipe">
-        <h2><%= recipe["title"] %></h2>
-        <%= image_tag recipe["image"], alt: recipe["title"] %>
-        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
-
+        <%= image_tag recipe["image"], alt: recipe["title"] %>  
+        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>      
       </div>
     <% end %>
   </div>
 <% else %>
   <p>No recipes found.</p>
 <% end %>
+</div>
