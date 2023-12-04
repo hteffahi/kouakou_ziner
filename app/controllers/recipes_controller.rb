@@ -17,6 +17,6 @@ class RecipesController < ApplicationController
   def fetch
     my_query = params[:query].gsub(',', ',+')
     @recipe_details = SpoonacularService.new.get_by_ingredients(my_query)
-    raise
+    @recipes = @recipe_details.parsed_response
   end
 end
