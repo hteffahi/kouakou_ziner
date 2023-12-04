@@ -20,3 +20,4 @@ class RecipesController < ApplicationController
     @recipes = @recipe_details.parsed_response
   end
 end
+ 
