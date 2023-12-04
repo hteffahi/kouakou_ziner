@@ -28,3 +28,4 @@ class RecipesController < ApplicationController
   end
 
 end
+ 
