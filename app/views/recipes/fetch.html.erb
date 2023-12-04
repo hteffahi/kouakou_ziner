@@ -1,13 +1,13 @@
 
 <div class="container">
-<h1>Recipe Results</h1>
+<h1 class='fontfamily'>Recipe Results</h1>
 
 <% if @recipes.present? %>
   <div class="recipes">
     <% @recipes.each do |recipe| %>
       <div class="recipe">
-        <%= image_tag recipe["image"], alt: recipe["title"] %>  
-        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>      
+        <%= image_tag recipe["image"], alt: recipe["title"] %>
+        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
       </div>
     <% end %>
   </div>
