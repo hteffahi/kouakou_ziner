@@ -1,7 +1,12 @@
 <div class="add-margin">
 
-<div data-search-ingredients-target='list' class='row' data-controller="select-ingredient">
-  <button data-action="click->select-ingredient#submit"> kouakiziner </button>
+<div data-search-ingredients-target='list' class='row d-flex justify-content-center' data-controller="select-ingredient">
+<%= link_to "#", data: { action: "click->select-ingredient#submit" }, class: "btn btn-green px-2 mb-2", style: "font-size: larger; font-family: Pacifico; width: 200px;" do %>
+  <%= image_tag 'cooking-64.png' %>
+  <p>Kouakou'ziner ?</p>
+<% end %>
+
+  <%# <button data-action="click->select-ingredient#submit" class="btn btn-green px-2 mb-2"> Kouakou'ziner </button> %>
   <% if !@ingredients.empty? %>
     <% @ingredients.each do |ingredient| %>
       <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
