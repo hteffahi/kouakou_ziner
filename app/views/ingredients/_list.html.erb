@@ -1,10 +1,12 @@
 <div class="add-margin">
 
-<div data-search-ingredients-target='list' class='row d-flex justify-content-center' data-controller="select-ingredient">
-<%= link_to "#", data: { action: "click->select-ingredient#submit" }, class: "btn btn-green px-2 mb-2", style: "font-size: larger; font-family: Pacifico; width: 200px;" do %>
-  <%= image_tag 'cooking-64.png' %>
-  <p>Kouakou'ziner ?</p>
-<% end %>
+  <div data-search-ingredients-target='list' class='row d-flex justify-content-center' data-controller="select-ingredient">
+    <div class='d-flex justify-content-center'>
+      <%= link_to "#", data: { action: "click->select-ingredient#submit" }, class: "btn btn-green px-2 mb-2", style: "width: 200px;" do %>
+      <%= image_tag 'cooking-64.png' %>
+      <p>Kouakou'ziner ?</p>
+      <% end %>
+    </div>
 
   <%# <button data-action="click->select-ingredient#submit" class="btn btn-green px-2 mb-2"> Kouakou'ziner </button> %>
   <% if !@ingredients.empty? %>
