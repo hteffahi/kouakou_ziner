@@ -15,12 +15,12 @@
             <div class="mt-auto d-flex justify-content-evenly">
               <div class="edit">
                 <%= link_to edit_ingredient_path(ingredient) do %>
-                  <%= image_tag 'editing', alt: 'Editing ingredient' %>
+                  <%= image_tag 'editing.png', alt: 'Editing ingredient' %>
                 <% end %>
               </div>
               <div id='delete'>
                 <%= link_to ingredient_path(ingredient), class: "navbar-brand", data: {turbo_method: :delete, turbo_confirm: "Delete ingredient from fridge"} do %>
-                  <%= image_tag 'bin', alt: 'Delete ingredient from fridge' %>
+                  <%= image_tag 'bin.png', alt: 'Delete ingredient from fridge' %>
                 <% end %>
               </div>
             </div>

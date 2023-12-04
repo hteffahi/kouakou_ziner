@@ -20,6 +20,6 @@ class SpoonacularService
 
   def get_by_ingredients(param)
     options = { query: { apiKey: @api_key } }
-    self.class.get("/recipes/findByIngredients?ingredients=#{param}", options)
+    self.class.get("/recipes/findByIngredients?ingredients=#{param}&ranking=2", options)
   end
 end
