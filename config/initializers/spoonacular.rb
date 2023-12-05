@@ -1,3 +1,3 @@
-SPOONACULAR_API_KEY = 'bee6014526ce4b25bc0623aa3f8600bd'
+SPOONACULAR_API_KEY = 'f56dceaeb1034ac5969fb3d9dadcab23'
 
 SPOONACULAR_BASE_URL = 'https://api.spoonacular.com'
