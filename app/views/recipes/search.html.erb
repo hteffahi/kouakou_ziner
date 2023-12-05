@@ -1,11 +1,15 @@
 
-<div class="container mb-5">
-<h1>Recipe Results</h1>
+<h1 class='fontfamily mt-2'>Recipe Results</h1>
+
 
 <% if @recipes.present? %>
   <div class="recipes">
     <% @recipes.each do |recipe| %>
+
       <div class="recipe">
+
+      <div class="recipes d-flex flex-column">
+
         <%= image_tag recipe["image"], alt: recipe["title"] %>
         <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
 
@@ -13,6 +17,6 @@
     <% end %>
   </div>
 <% else %>
-  <p>No recipes found.</p>
+  <p style="font-family: Pacifico;">No recipes found.</p>
 <% end %>
 </div>

@@ -1,4 +1,8 @@
-<div class="container">
+<div class="container mb-5">
+<%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do %>
+<i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+<% end %>
+
   <div class="img_show">
     <% if @recipe_details["image"] %>
       <img src="<%= @recipe_details["image"] %>" alt="<%= @recipe_details["title"] %>">
@@ -14,22 +18,21 @@
       </div>
 
       <div class= "list-items">
-      <i class="fa-solid fa-carrot"></i>
-      <h2>Ingrédients</h2>
-      <ul >
-        <% @recipe_details["extendedIngredients"].each do |ingredient| %>
-          <li><%= ingredient["original"] %></li>
-        <% end %>
-      </ul>
+        <i class="fa-solid fa-carrot"></i>
+        <h2>Ingrédients</h2>
+        <ul >
+          <% @recipe_details["extendedIngredients"].each do |ingredient| %>
+            <li><%= ingredient["original"] %></li>
+          <% end %>
+        </ul>
       </div>
       <div class="instructions_info">
-      <i class="fa-solid fa-circle-info"></i>
-      <h2>Instructions</h2>
-      <p><%= @recipe_details["instructions"].html_safe %></p>
-    <!-- Autres détails que vous souhaitez afficher -->
+        <i class="fa-solid fa-circle-info"></i>
+        <h2>Instructions</h2>
+        <p><%= @recipe_details["instructions"].html_safe %></p>
+      </div>
     <% else %>
       <p>La recette n'a pas pu être trouvée.</p>
     <% end %>
-       </div>
   </div>
 </div>

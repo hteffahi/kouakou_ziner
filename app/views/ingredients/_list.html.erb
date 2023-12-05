@@ -1,10 +1,12 @@
 <div class="add-margin">
 
-<div data-search-ingredients-target='list' class='row d-flex justify-content-center' data-controller="select-ingredient">
-<%= link_to "#", data: { action: "click->select-ingredient#submit" }, class: "btn btn-green px-2 mb-2", style: "font-size: larger; font-family: Pacifico; width: 200px;" do %>
-  <%= image_tag 'cooking-64.png' %>
-  <p>Kouakou'ziner ?</p>
-<% end %>
+  <div data-search-ingredients-target='list' class='row d-flex justify-content-center' data-controller="select-ingredient">
+    <div class='d-flex justify-content-center'>
+      <%= link_to "#", data: { action: "click->select-ingredient#submit" }, class: "btn btn-green px-2 mb-2", style: "width: 200px;" do %>
+      <%= image_tag 'cooking-64.png' %>
+      <p>Kouakou'ziner ?</p>
+      <% end %>
+    </div>
 
   <%# <button data-action="click->select-ingredient#submit" class="btn btn-green px-2 mb-2"> Kouakou'ziner </button> %>
   <% if !@ingredients.empty? %>
@@ -12,10 +14,18 @@
       <div class="col-6 col-sm-4 col-md-3 col-lg-2 mb-4">
         <div id='ingredient-card' class="card h-100 shadow-sm" style="background-color: #f8f9fa;">
           <div class="card-body d-flex flex-column my-card" data-action="click->select-ingredient#append">
-            <h5 class="card-title" style="color: black;"><%= ingredient.name %></h5>
-            <p class="card-text" style="color: black;">
+            <h5 class="card-title" style="font-family: Pacifico;"><%= ingredient.name %></h5>
+            <p class="card-text fw-bold" style="color: black;">
               Amount: <%= ingredient.amount %> <%= ingredient.unit %><br>
-              Expiration : <%= ingredient.expiration %>
+              <% count = (ingredient.expiration - Date.today).to_i %>
+              <% color = if count.between?(0, 3) %>
+                <% 'text-danger'%>
+              <% elsif count.between?(4, 6) %>
+                <% 'text-warning' %>
+              <% else %>
+                <% 'text-success'%>
+              <% end %>
+              <span class="<%= color %>"> Days left : <%= (ingredient.expiration - Date.today).to_i %></span>
             </p>
             <div class="mt-auto d-flex justify-content-evenly">
               <div class="edit">
