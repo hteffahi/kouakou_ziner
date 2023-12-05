@@ -1,12 +1,12 @@
 
 <div class="container">
 <div class="d-flex flex-column align-items-center pt-3">
-<div class="profil_image">
+<div class="profil_image d-flex flex-column align-items-center pt-3">
  <%= image_tag "Lennon.jpg", alt:"photo_avatar" %>
- <h3>John Lennon</h3>
+ <h3 class='fontfamily'>John Lennon</h3>
 </div>
 <div class="search-bar">
-<%= form_with url: recipes_search_path, method: :get do |form| %>
+<%= form_with url: recipes_search_path, class: 'd-flex', method: :get do |form| %>
   <%= form.text_field :query, placeholder: "Search for Recipes",class:"search-field" %>
   <%= form.submit "Cook !", class: "submit-field btn btn-green" %>
 <% end %>
