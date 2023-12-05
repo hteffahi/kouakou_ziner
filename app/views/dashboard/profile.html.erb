@@ -1,43 +1,28 @@
-
 <div class="container">
-<div class="d-flex flex-column align-items-center pt-3">
-<div class="profil_image d-flex flex-column align-items-center pt-3">
- <%= image_tag "Lennon.jpg", alt:"photo_avatar" %>
- <h3 class='fontfamily'>John Lennon</h3>
-</div>
-<div class="search-bar">
-<%= form_with url: recipes_search_path, class: 'd-flex', method: :get do |form| %>
-  <%= form.text_field :query, placeholder: "Search for Recipes",class:"search-field" %>
-  <%= form.submit "Cook !", class: "submit-field btn btn-green" %>
-<% end %>
-</div>
-
-
-  <div class="action-cards">
-   <%= link_to new_ingredient_path(current_user) do %>
-      <div class="ingredient-card">
-        <i class="fa-solid fa-plus"></i>
-        <h3>favorites recipes</h3>
-      </div>
-    <%end%>
-    <%= link_to new_ingredient_path(current_user) do %>
-      <div class="ingredient-card">
-        <i class="fa-solid fa-plus"></i>
-        <h3>Add New Ingredients</h3>
-      </div>
-    <%end%>
-<%= link_to ingredients_path do %>
-      <div class="ingredient-card link">
-        <i class="fa-solid fa-chart-bar"></i>
-        <h3>Fridge</h3>
-      </div>
-    <%end%>
-
- <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
- <%= image_tag "logout.png", alt:"logout" %>
-  <h3 class="log_out">log out</h3>
- <% end %>
-
+  <div class="d-flex flex-column align-items-center pt-3">
+    <div class="profil_image d-flex flex-column align-items-center pt-3">
+      <%= image_tag "Lennon.jpg", alt:"photo_avatar" %>
+      <h3 class='fontfamily'>John Lennon</h3>
+    </div>
+    <div class="search-bar">
+      <%= form_with url: recipes_search_path, class: 'd-flex gap-1', method: :get do |form| %>
+        <%= form.text_field :query, placeholder: "Search for Recipes",class:"search-field" %>
+        <%= form.submit "Cook !", class: "submit-field btn btn-green" %>
+      <% end %>
+    </div>
+    <div class="action-cards">
+        <%= link_to recipes_path do %>
+        <div class="ingredient-card">
+          <%= image_tag 'heart.png' %>
+          <h2 class="fontfamily">Favorites recipes</h2>
+        </div>
+      <%end%>
+      <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+        <div class="ingredient-card">
+          <%= image_tag "logout.png", alt:"logout" %>
+          <h2 class="fontfamily log_out">Log out</h2>
+        </div>
+      <% end %>
+    </div>
   </div>
-</div>
 </div>
