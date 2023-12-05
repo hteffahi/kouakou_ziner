@@ -1,7 +1,7 @@
-<div class="container mb-5">
-<%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do %>
-<i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
-<% end %>
+<div class="container">
+  <%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do %>
+    <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+  <% end %>
 
   <div class="img_show">
     <% if @recipe_details["image"] %>
@@ -19,7 +19,7 @@
 
       <div class= "list-items">
         <i class="fa-solid fa-carrot"></i>
-        <h2>Ingrédients</h2>
+        <h2>Ingredients</h2>
         <ul >
           <% @recipe_details["extendedIngredients"].each do |ingredient| %>
             <li><%= ingredient["original"] %></li>
@@ -31,8 +31,9 @@
         <h2>Instructions</h2>
         <p><%= @recipe_details["instructions"].html_safe %></p>
       </div>
-    <% else %>
-      <p>La recette n'a pas pu être trouvée.</p>
+     <%= link_to "Favorite", recipes_path(recipe: { name: @recipe_details["title"], user_id: current_user.id, image: @recipe_details["image"] }), data: { turbo_method: :post } %>
+          <% else %>
+      <p>Recipe cant be found.</p>
     <% end %>
   </div>
 </div>

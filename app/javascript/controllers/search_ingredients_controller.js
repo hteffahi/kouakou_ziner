@@ -10,6 +10,7 @@ export default class extends Controller {
   }
 
   update(event) {
+    event.preventDefault()
     let query = `?query=${this.inputTarget.value}`;
     const url = `${window.location.href}?query=${this.inputTarget.value}`;
     console.log(url);
