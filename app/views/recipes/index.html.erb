@@ -1,8 +1,13 @@
+<div class="mb-5">
 
-<%= form_with url: recipes_search_path, method: :get do |form| %>
-  <%= form.label :query, "Search for Recipes:" %>
-  <%= form.text_field :query %>
-  <%= form.submit "Search" %>
-<% end %>
+<h1>Favorites</h1>
 
-
+ <div class="recipes">
+    <% @recipes.each do |recipe| %>
+      <div class="recipe d-flex flex-column">
+        <img src="<%= recipe.image %>" alt="image">
+        <%= recipe.name %>
+      </div>
+    <% end %>
+  </div>
+</div>
