@@ -3,10 +3,12 @@
   <% if @recipes.present? %>
     <div class="recipes">
       <% @recipes.each do |recipe| %>
-        <div class="recipe d-flex flex-column">
+        <div class="d-flex flex-column">
           <%= link_to recipe_path(recipe["id"]) do%>
-            <%= image_tag recipe["image"], alt: recipe["title"] %>
-            <%= recipe["title"] %>
+            <div class="d-flex flex-column">
+              <%= image_tag recipe["image"], alt: recipe["title"] %>
+              <%= recipe["title"] %>
+            </div>
           <% end %>
         </div>
       <% end %>
