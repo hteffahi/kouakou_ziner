@@ -1,13 +1,22 @@
-<h1 class='fontfamily mt-2'>Recipe Results</h1>
-<% if @recipes.present? %>
-  <div class="recipes container">
-    <% @recipes.each do |recipe| %>
-      <div class="recipes d-flex flex-column">
-        <%= image_tag recipe["image"], alt: recipe["title"] %>
-        <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
-      </div>
+<div class="container">
+  <div class='d-flex justify-content-between'>
+    <%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do%>
+      <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
     <% end %>
+    <h1 class='fontfamily mt-2'>Help yourself</h1>
+    <h1></h1>
   </div>
-<% else %>
-  <p style="font-family: Pacifico;">No recipes found.</p>
-<% end %>
+
+  <% if @recipes.present? %>
+    <div class="recipes">
+      <% @recipes.each do |recipe| %>
+        <div class="recipes d-flex flex-column">
+          <%= image_tag recipe["image"], alt: recipe["title"] %>
+          <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="fs-2 mt-5" style="font-family: Pacifico;">No recipes found 😥</p>
+  <% end %>
+</div>
