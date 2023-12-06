@@ -20,7 +20,7 @@
       <div class= "list-items">
         <i class="fa-solid fa-carrot"></i>
         <h2>Ingredients</h2>
-        <ul >
+        <ul>
           <% @recipe_details["extendedIngredients"].each do |ingredient| %>
             <li><%= ingredient["original"] %></li>
           <% end %>
@@ -41,7 +41,7 @@
           <% end %>
         </div>
       </div>
-          <% else %>
+    <% else %>
       <p>Recipe cant be found.</p>
     <% end %>
   </div>
