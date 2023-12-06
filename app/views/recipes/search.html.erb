@@ -1,29 +1,17 @@
-<h1 class='fontfamily mt-2'>Recipe Results</h1>
-<% if @recipes.present? %>
-  <div class="recipes container">
-    <% @recipes.each do |recipe| %>
-      <div class="recipes d-flex flex-column">
-        <%= link_to recipe_path(recipe["id"]) do%>
-          <%= image_tag recipe["image"], alt: recipe["title"] %>
-          <%= recipe["title"] %>
-        <% end %>
-      </div>
-    <% end %>
-    <h1 class='fontfamily mt-2'>Help yourself</h1>
-    <h1></h1>
-  </div>
-
+<div class="container">
+  <h1 class='fontfamily mt-2'>Help yourself</h1>
   <% if @recipes.present? %>
     <div class="recipes">
       <% @recipes.each do |recipe| %>
         <div class="recipes d-flex flex-column">
-          <%= image_tag recipe["image"], alt: recipe["title"] %>
-          <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
+          <%= link_to recipe_path(recipe["id"]) do%>
+            <%= image_tag recipe["image"], alt: recipe["title"] %>
+            <%= recipe["title"] %>
+          <% end %>
         </div>
       <% end %>
     </div>
-<% else %>
+  <% else %>
     <p class="fs-2 mt-5" style="font-family: Pacifico;">No recipes found 😥</p>
   <% end %>
-<% end %>
 </div>
