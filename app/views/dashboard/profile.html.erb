@@ -1,6 +1,6 @@
 <div class="container">
   <div class="d-flex flex-column align-items-center pt-3">
-    <div class="profil_image d-flex flex-column align-items-center pt-3">
+    <div class="profil_image d-flex flex-column align-items-center gap-2 pt-3">
       <%= image_tag "Lennon.jpg", alt:"photo_avatar" %>
       <h3 class='fontfamily'>John Lennon</h3>
     </div>
@@ -11,7 +11,7 @@
       <% end %>
     </div>
     <div class="action-cards">
-        <%= link_to recipes_path do %>
+      <%= link_to recipes_path do %>
         <div class="ingredient-card">
           <%= image_tag 'heart.png' %>
           <h2 class="fontfamily">Favorites recipes</h2>
