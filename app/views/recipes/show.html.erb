@@ -31,7 +31,16 @@
         <h2>Instructions</h2>
         <p><%= @recipe_details["instructions"].html_safe %></p>
       </div>
-     <%= link_to "Favorite", recipes_path(recipe: { name: @recipe_details["title"], user_id: current_user.id, image: @recipe_details["image"] }), data: { turbo_method: :post } %>
+      <div class="users-action d-flex mt-2 align-items-end justify-content-between">
+        <%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do %>
+          <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+        <% end %>
+        <div data-controller="recipe">
+          <%= link_to recipes_path(recipe: { name: @recipe_details["title"], user_id: current_user.id, image: @recipe_details["image"] }), data: { turbo_method: :post } do %>
+            <i data-recipe-target="favoris" data-action="click->recipe#addToCookbook" class="fa-regular fa-heart" style="color: #557C55; font-size: xxx-large;"></i>
+          <% end %>
+        </div>
+      </div>
           <% else %>
       <p>Recipe cant be found.</p>
     <% end %>
