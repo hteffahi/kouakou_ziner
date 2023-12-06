@@ -4,9 +4,12 @@
 
  <div class="recipes">
     <% @recipes.each do |recipe| %>
-      <div class="recipe d-flex flex-column">
+      <div class="recipe d-flex flex-column" style="position: relative;">
         <%= image_tag recipe.image %>
-        <h3 class="fontfamily"><%= recipe.name %></h3>
+          <h3 class="fontfamily"><%= recipe.name %></h3>
+          <%= link_to recipe_path(recipe), class: "delete", data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} do %>
+            <%= image_tag 'bin.png', class: "corbeille", alt: 'Delete recipe from favorites' %>
+          <% end %>
       </div>
     <% end %>
   </div>
