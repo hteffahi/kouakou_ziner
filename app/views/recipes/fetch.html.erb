@@ -1,10 +1,9 @@
 <div class="container">
   <h1 class='fontfamily mt-2'>Help yourself</h1>
-
   <% if @recipes.present? %>
     <div class="recipes">
       <% @recipes.each do |recipe| %>
-        <div class="recipe">
+        <div class="recipe d-flex flex-column">
           <%= link_to recipe_path(recipe["id"]) do%>
             <%= image_tag recipe["image"], alt: recipe["title"] %>
             <%= recipe["title"] %>
