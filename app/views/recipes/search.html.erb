@@ -1,7 +1,13 @@
-<div class="container">
-  <div class='d-flex justify-content-between'>
-    <%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do%>
-      <i class="fa-solid fa-chevron-left" style="color: #ffffff;"></i>
+<h1 class='fontfamily mt-2'>Recipe Results</h1>
+<% if @recipes.present? %>
+  <div class="recipes container">
+    <% @recipes.each do |recipe| %>
+      <div class="recipes d-flex flex-column">
+        <%= link_to recipe_path(recipe["id"]) do%>
+          <%= image_tag recipe["image"], alt: recipe["title"] %>
+          <%= recipe["title"] %>
+        <% end %>
+      </div>
     <% end %>
     <h1 class='fontfamily mt-2'>Help yourself</h1>
     <h1></h1>
