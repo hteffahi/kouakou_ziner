@@ -4,8 +4,10 @@
     <div class="recipes">
       <% @recipes.each do |recipe| %>
         <div class="recipe">
-          <%= image_tag recipe["image"], alt: recipe["title"] %>
-          <%= link_to recipe["title"], recipe_path(recipe["id"]) %>
+          <%= link_to recipe_path(recipe["id"]) do%>
+            <%= image_tag recipe["image"], alt: recipe["title"] %>
+            <%= recipe["title"] %>
+          <% end %>
         </div>
       <% end %>
     </div>
