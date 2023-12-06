@@ -8,6 +8,6 @@ Rails.application.routes.draw do
   resources :ingredients
   get 'recipes/fetch', to: 'recipes#fetch'
   get '/recipes/search', to: 'recipes#search', as: 'recipes_search'
-  resources :recipes, only: [:index, :show, :create]
+  resources :recipes, only: [:index, :show, :create, :destroy]
   get "/dashboard", to: "dashboard#profile"
 end
