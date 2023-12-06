@@ -2,10 +2,10 @@
   <h1 class='fontfamily'>Frigoooo</h1>
   <div class="row justify-content-center">
     <div data-controller='search-ingredients' class="my-3">
-      <%= form_with url: ingredients_path, method: :get, class: "d-flex mb-3", data: { search_ingredients_target: 'form' } do %>
+      <%= form_with url: ingredients_path, method: :get, class: "d-flex gap-1 mb-3", data: { search_ingredients_target: 'form' } do %>
         <%= text_field_tag :query,
           params[:query],
-          class: "form-control",
+          class: "search-field form-control rounded-pill border-2 fontfamily",
           placeholder: "Search an ingredient",
           data: { action: 'keyup->search-ingredients#update', search_ingredients_target: 'input' }
         %>

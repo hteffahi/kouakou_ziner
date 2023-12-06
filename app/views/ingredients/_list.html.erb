@@ -17,7 +17,7 @@
             <p class="card-text fw-bold" style="color: black;">
               Amount: <%= ingredient.amount %> <%= ingredient.unit %><br>
               <% count = (ingredient.expiration - Date.today).to_i %>
-              <% color = if count < 3 %>
+              <% color = if count <= 3 %>
                 <% 'text-danger'%>
               <% elsif count.between?(4, 6) %>
                 <% 'text-warning' %>
