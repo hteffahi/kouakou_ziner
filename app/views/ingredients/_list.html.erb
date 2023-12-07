@@ -15,7 +15,7 @@
           <div class="card-body d-flex flex-column my-card" data-action="click->select-ingredient#append">
             <h5 class="card-title" style="font-family: Pacifico;"><%= ingredient.name %></h5>
             <p class="card-text fw-bold" style="color: black;">
-              Amount: <%= ingredient.amount %> <%= ingredient.unit %><br>
+              Quantity: <%= ingredient.amount %> <%= ingredient.unit %><br>
               <% count = (ingredient.expiration - Date.today).to_i %>
               <% color = if count <= 3 %>
                 <% 'text-danger'%>

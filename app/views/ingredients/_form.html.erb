@@ -7,7 +7,7 @@
         <div class="form-inputs fontfamily fs-3">
           <%= f.input :name, input_html: { class: 'form-control border-2 rounded-pill' } %>
           <%= f.input :expiration, as: :string, input_html: { class: 'border-2 rounded-pill', data: { controller: "flatpickr" } } %>
-          <%= f.input :amount, input_html: { class: 'form-control border-2 rounded-pill' } %>
+          <%= f.input :amount, label: "Quantity", input_html: { class: 'form-control border-2 rounded-pill' } %>
           <%= f.input :unit, collection: Ingredient.valid_units, input_html: { class: 'form-control border-2 rounded-pill' } %>
           <%= f.input :category_id, collection: Category.all, label_method: :name, include_blank: true, input_html: { class: 'form-control border-2 rounded-pill' } %>
         </div>
