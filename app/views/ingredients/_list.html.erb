@@ -24,7 +24,7 @@
               <% else %>
                 <% 'text-success'%>
               <% end %>
-              <span class="<%= color %>"> Days left : <%= (ingredient.expiration - Date.today).to_i %></span>
+              <p class="fw-bold <%= color %>"> Days left : <%= (ingredient.expiration - Date.today).to_i %></p>
             </p>
             <div class="mt-auto d-flex justify-content-evenly">
               <div class="edit">
