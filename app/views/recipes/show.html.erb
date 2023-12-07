@@ -14,22 +14,24 @@
       <div class = "recipe-info">
         <i class="fa-solid fa-utensils"></i>
         <h2><%= @recipe_details["title"] %></h2>
-        <p><%= @recipe_details["summary"].html_safe %></p>
+        <p><%= @recipe_details["summary"].html_safe if @recipe_details["summary"] %></p>
       </div>
 
       <div class= "list-items">
         <i class="fa-solid fa-carrot"></i>
         <h2>Ingredients</h2>
         <ul>
+        <% if @recipe_details["extendedIngredients"] %>
           <% @recipe_details["extendedIngredients"].each do |ingredient| %>
             <li><%= ingredient["original"] %></li>
           <% end %>
+        <% end %>
         </ul>
       </div>
       <div class="instructions_info">
         <i class="fa-solid fa-circle-info"></i>
         <h2>Instructions</h2>
-        <p><%= @recipe_details["instructions"].html_safe %></p>
+        <p><%= @recipe_details["instructions"].html_safe if @recipe_details["instructions"] %></p>
       </div>
       <div class="users-action d-flex mt-2 align-items-end justify-content-between">
         <%= link_to "javascript:history.back()", class: "btn btn-green mt-2" do %>
